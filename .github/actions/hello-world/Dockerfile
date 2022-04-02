@@ -1,6 +1,6 @@
 FROM golang:1.15
 WORKDIR /go/srv/hello
-COPY .
+COPY . .
 RUN go get -d -v ./...
 RUN go install -v ./...
 CMD ["hello"]
