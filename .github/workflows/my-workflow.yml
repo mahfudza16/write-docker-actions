@@ -1,14 +1,16 @@
-# #Workflow files are the recipe for task automation. This is where actions are placed if I want to use them for a task.
+#Workflow files are the recipe for task automation. This is where actions are placed if I want to use them for a task.
 
-# name: Docker Actions
-# on: [push]
+name: Docker Actions
+on:
+  pull_request:
+    types: [labeled]
 
-# jobs:
-#   action:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v1
-#       - name: hello-action
-#         uses: ./.github/actions/hello-world
-#         with:
-#           firstGreeting: "Learning Lab User"
+jobs:
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: hello-action
+        uses: ./.github/actions/hello-world
+      - name: meow
+        uses: ./.github/actions/cat-facts
