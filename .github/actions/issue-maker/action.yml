@@ -17,5 +17,5 @@ inputs:
     required: true
 
 runs:
-  uses: "docker"
+  using: "docker"
   image: "Dockerfile"
